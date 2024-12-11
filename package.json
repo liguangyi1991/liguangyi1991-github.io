@@ -1,0 +1,29 @@
+{
+  "name": "whlit.github.io",
+  "scripts": {
+    "dev": "pnpm docs:dev",
+    "docs:dev": "pnpm update-time && vitepress dev",
+    "docs:build": "pnpm update-time && vitepress build",
+    "format": "prettier --write .",
+    "update-time": "node ./script/update-time.js"
+  },
+  "author": "whlit",
+  "devDependencies": {
+    "cross-spawn": "^7.0.3",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.4.2",
+    "gray-matter": "^4.0.3",
+    "lint-staged": "^15.2.7",
+    "markdown-it-mathjax3": "^4.3.2",
+    "mermaid": "^10.9.0",
+    "prettier": "^3.2.5",
+    "simple-git-hooks": "^2.11.1",
+    "vitepress": "^1.0.1"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "prettier --write --ignore-unknown"
+  }
+}
